@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define maxn 1000+10
+#define maxn 1050
 using namespace std;
 
 int n,m;
