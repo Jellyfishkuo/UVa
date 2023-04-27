@@ -35,8 +35,7 @@ int main(){
             for(int c=0;c<n;c++)
                 cin>>a[r][c];
         int ans=INF;
-        for(int s=0;s<(1<<n);s++)
-            ans=min(ans,check(s));
+        for(int s=0;s<(1<<n);s++) ans=min(ans,check(s));
         if(ans==INF) ans=-1;
         cout<<"Case "<<Case<<": "<<ans<<endl;
     }
