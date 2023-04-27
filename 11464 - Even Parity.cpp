@@ -11,14 +11,14 @@ int check(int s){
         if(s&(1<<i)) b[0][i]=1;
         else if(a[0][i]==1) return INF;
     for(int r=1;r<n;r++)
-    for(int c=0;c<n;c++){
-        int sum=0;
-        if(r>1) sum+=b[r-2][c];
-        if(c>0) sum+=b[r-1][c-1];
-        if(c<n-1) sum+=b[r-1][c+1];
-        b[r][c]=sum%2;
-        if(a[r][c]==1&&b[r][c]==0) return INF;
-    }
+        for(int c=0;c<n;c++){
+            int sum=0;
+            if(r>1) sum+=b[r-2][c];
+            if(c>0) sum+=b[r-1][c-1];
+            if(c<n-1) sum+=b[r-1][c+1];
+            b[r][c]=sum%2;
+            if(a[r][c]==1&&b[r][c]==0) return INF;
+        }
     int cnt=0;
     for(int r=0;r<n;r++)
         for(int c=0;c<n;c++)
