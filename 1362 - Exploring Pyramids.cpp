@@ -9,7 +9,7 @@ long long dp(int i,int j){
     if(d[i][j]!=-1) return d[i][j];
     if(i==j) return 1;
     if(s[i]!=s[j]) return 0;
-    long long& ans=d[i][j];
+    int& ans=d[i][j];
     ans=0;
     for(int k=i+2;k<=j;k++)
         ans=(ans+dp(i+1,k-1)*dp(k,j))%1000000000;
