@@ -4,8 +4,8 @@
 using namespace std;
 
 char s[maxn];
-long long d[maxn][maxn];
-long long dp(int i,int j){
+int d[maxn][maxn];
+int dp(int i,int j){
     if(d[i][j]!=-1) return d[i][j];
     if(i==j) return 1;
     if(s[i]!=s[j]) return 0;
