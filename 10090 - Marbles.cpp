@@ -16,7 +16,6 @@ int n,c1,c2,n1,n2;
 
 main(){
     while(cin>>n,n){
-
         cin>>c1>>n1>>c2>>n2;
         int x,y;
         int g=extend_gcd(n1,n2,x,y);
