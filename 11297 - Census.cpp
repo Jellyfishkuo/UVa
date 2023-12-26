@@ -4,16 +4,16 @@
 using namespace std;
 
 int maxTree[maxn][maxn],minTree[maxn][maxn],n;
-int xo,xleaf,x1,y1,x2,y2,x,y,v,vmax,vmin;
+int xo,xleaf,x1,y11,x2,y2,x,y,v,vmax,vmin;
 
 void query_Y(int o,int l,int r){
-    if(y1<=l&&r<=y2){
+    if(y11<=l&&r<=y2){
         vmax=max(vmax,maxTree[xo][o]);
         vmin=min(vmin,minTree[xo][o]);
     }
     else{
         int mid=(l+r)/2;
-        if(y1<=mid) query_Y(o*2,l,mid);
+        if(y11<=mid) query_Y(o*2,l,mid);
         if(mid<y2) query_Y(o*2+1,mid+1,r);
     }
 }
@@ -81,7 +81,7 @@ int main(){
         while(Q--){
             cin>>op;
             if(op[0]=='q'){
-                cin>>x1>>y1>>x2>>y2;
+                cin>>x1>>y11>>x2>>y2;
                 vmax=-INF;
                 vmin=INF;
                 query_X(1,1,n);
