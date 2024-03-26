@@ -21,7 +21,7 @@ bool cover(int i,double mx){
 
 bool visible(int i,double mx){
     if(!cover(i,mx)) return false;
-    for(int k=0;k<n;k++)
+    for(int k=0;k<n;k++)                   // 檢查所有的建築物在 mx 處是否遮住建築物 b[i]
         if(b[k].y<b[i].y&&b[k].h>=b[i].h&&cover(k,mx)) return false;
     return true;
 }
@@ -37,17 +37,18 @@ int main(){
         }
         sort(b,b+n);
         sort(xx,xx+n*2);
-        int m=unique(xx,xx+n*2)-xx;
+        int m=unique(xx,xx+n*2)-xx;         // x 座標排序後去掉重複的，得到 m 個不同的 x 座標
         if(cas++) cout<<endl;
         cout<<"For map #"<<cas<<", the visible buildings are numbered as follows:\n"<<b[0].id;
         for(int i=1;i<n;i++){
             bool vis=false;
-            for(int j=0;j<m-1;j++)
+            for(int j=0;j<m-1;j++){         // m 個不同的 x 座標存於陣列 xx，檢驗 m-1 個相鄰 2 個 x 值中點處，看看建築物 b[i] 是否看的見
                 if(visible(i,(xx[j]+xx[j+1])/2)){
                     vis=true;
-                    break;
+                    break;                  // 只要有一處看的見就停止檢驗建築物 b[i]
                 }
-            if(vis) cout<<" "<<b[i].id;
+            }
+            if(vis) cout<<" "<<b[i].id;     // 看到了建築物 b[i]，輸出建築物編號 b[i].id
         }
         cout<<endl;
     }
