@@ -5,11 +5,11 @@ using namespace std;
 int t,a,b,n;
 int f[1000*1000+500];
 
-int pow_mod(int a,int b,int n){
-    if(b==0) return 1;
-    int ans=pow_mod(a,b/2,n);
+int pow_mod(int a,int b,int n){                 // 計算 (a^b)%n
+    if(b==0) return 1; 
+    int ans=pow_mod(a,b/2,n);                   // 計算 ( a^(b/2) )%n
     ans=ans*ans%n;
-    if(b%2) ans=ans*a%n;
+    if(b%2) ans=ans*a%n;                        // b 是奇數，ans 要再乘以 a%n
     return ans;
 }
 
