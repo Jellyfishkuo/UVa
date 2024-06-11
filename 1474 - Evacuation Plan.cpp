@@ -23,13 +23,16 @@ int main(){
 			cin>>t[i].p;
 			t[i].id=i;
 		}
+        
 		cin>>m;
 		for(int i=1;i<=m;i++){
 			cin>>s[i].p;
 			s[i].id=i;
 		}
+        
 		sort(t+1,t+n+1);
 		sort(s+1,s+m+1);
+        
 		for(int i=2;i<=m;i++) for(int j=1;j<i;j++) dp[i][j]=INF; 
 		for(int i=1;i<=n;i++) dp[1][i]=dp[1][i-1]+abs(t[i].p-s[1].p);
 		for(int i=2;i<=m;i++){
