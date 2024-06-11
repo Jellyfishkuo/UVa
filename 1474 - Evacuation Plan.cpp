@@ -44,12 +44,11 @@ int main(){
 				}
 			}
 		}
-		int b=m;
-		for(int i=n;i>0;i--){
-			ans[t[i].id]=s[b].id;
-			b-=path[b][i];
-		}
 		cout<<dp[m][n]<<endl;
+		for(int i=n;i>0;i--){
+			ans[t[i].id]=s[m].id;
+			m-=path[m][i];
+		}
 		for(int i=1;i<=n;i++){
 			if(i!=1) cout<<" ";
 			cout<<ans[i];
