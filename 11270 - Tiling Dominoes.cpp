@@ -5,7 +5,7 @@ using namespace std;
 
 int n,m;
 int cur;
-int dp[2][1<<maxn];
+int dp[2][1<<maxn];                       // 狀態壓縮 DP 陣列，表示目前走到某格時所有可能狀態的組合數
 
 void update(int a,int b)                  // a：m 位的舊狀態，b：m+1 位的新狀態
 {
