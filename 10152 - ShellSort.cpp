@@ -17,7 +17,7 @@ int main()
         int pt=n-1,ps=n-1;
         while(ps>=0)
         {
-            if (source[ps]==target[pt]) pt--;
+            if(source[ps]==target[pt]) pt--;
             ps--;
         }
         while(pt>=0) cout<<target[pt--]<<"\n";
