@@ -2,15 +2,13 @@
 using namespace std;
 
 int t,n;
-string s;
-    
-int main() 
+
+int main()
 {
     cin>>t;
     while(t--)
     {
-        cin>>n;
-        getline(cin,s);
+        cin>>n>>ws;
         string target[n],source[n];
         for(int i=0;i<n;i++) getline(cin,source[i]);
         for(int i=0;i<n;i++) getline(cin,target[i]);
