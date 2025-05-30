@@ -40,7 +40,7 @@ int main()
                 {
                     for(int j=sum;j>=a[i];--j)
                         if(dp[j-a[i]])
-                        dp[j]=1;
+                            dp[j]=1;
                 }
             }
         }
