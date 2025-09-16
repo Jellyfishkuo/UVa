@@ -1,16 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-    int a,b;
-    while(cin>>a>>b,a+b){
-        int cnt=0,x=sqrt(a);
-        for(int i=a;i<=b;i++){
-            if(x*x>=a)
-                if(x*x<=b) cnt++;
-                else break;
-            x++;
-        }
-        cout<<cnt<<endl;
+int a,b;
+
+int main()
+{
+    while(cin>>a>>b&&(a||b))
+    {
+        int aa=ceil(sqrt(a)),bb=floor(sqrt(b));
+        cout<<bb-aa+1<<endl;
     }
 }
