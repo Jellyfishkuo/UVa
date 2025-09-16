@@ -20,20 +20,17 @@ int main()
     p();
     while(cin>>n,n)
     {
-        bool f=0;
-        int a=0,b=0;
+        int f=0;
         for(int i=3;i<=n/2;i+=2)
         {
             if(isp[i]&&isp[n-i])
             {
-                a=i;
-                b=n-i;
+                cout<<n<<" = "<<i<<" + "<<n-i<<endl;
                 f=1;
                 break;
             }
         }
-        if(f) cout<<n<<" = "<<a<<" + "<<b<<endl;
-        else cout<<"Goldbach's conjecture is wrong.\n";
+        if(!f) cout<<"Goldbach's conjecture is wrong.\n";
     }
     return 0;
 }
